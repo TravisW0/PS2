@@ -10,8 +10,10 @@ import org.junit.Test;
 
 public class MyInteger_Test {
 
+	public static MyInteger obj;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		obj = new MyInteger(20);
 	}
 
 	@AfterClass
@@ -28,7 +30,12 @@ public class MyInteger_Test {
 
 	@Test
 	public void test() {
-		assertTrue(1==1);
+		
+		assertTrue(obj.isEven());
+		assertFalse(obj.isOdd());
+		assertFalse(obj.isPrime());
+		assertTrue(obj.equals(20));
+		assertTrue(obj.equals(obj));
 	}
 
 }
